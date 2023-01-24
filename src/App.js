@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Fragment, useEffect, useState } from "react";
+import Person from "./Person";
+import users from './celebrities.json'
 function App() {
+  const[data , setData]=useState([]);
+
+  useEffect(()=>{
+     setData(users)   
+  },[])
+
+  const deleteUser=(id)=>{
+    const newData = data.filter(user=>user["id"]!=id)
+    setData(newData)
+  }
+
+  const editUser=(obj , id)=>{
+    const newData = data.map(user=>{
+      if(user.id==id){
+        return obj;
+      }
+      return user;
+    })
+    setData(newData)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      {data && data.map(user=>(<Person key={user["id"]} editUser={editUser} deleteUser={deleteUser} data={user}/>))}
+    </Fragment>
+
   );
 }
 

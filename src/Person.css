@@ -1,0 +1,57 @@
+.person{
+    width: 60%;
+    margin: 20px auto 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.person-heading{
+    display: flex;
+    padding-bottom: 5px;
+    justify-content: space-around;
+}
+
+.readButton{
+    float: right;
+    padding-right: 15px;    
+}
+
+.person-name{
+    margin: 3px 20px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.person-address{
+    display: flex;
+    justify-content: space-around;
+}
+
+.button-edit-delete{
+    float: right;
+}
+
+input{
+    border: 1px solid black;
+    border-radius: 3px ;
+    padding: 5px;
+    width: 100%;
+    text-decoration:none;
+    cursor: pointer;
+}
+
+textarea{
+    border: 1px solid black;
+    border-radius: 3px ;
+    padding: 5px;
+    width: 90%;
+    text-decoration:none;
+    cursor: pointer;
+    margin: 10px;
+    height: 70px;
+}
+label{
+    color: gray;
+}
